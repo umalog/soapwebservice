@@ -1,0 +1,10 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://generateddata.umalog.com">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:findNumberRequest>
+            <gs:number>23456</gs:number>
+        </gs:findNumberRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
+

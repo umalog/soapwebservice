@@ -1,0 +1,39 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://generateddata.umalog.com"
+           targetNamespace="http://generateddata.umalog.com" elementFormDefault="qualified">
+
+    <xs:element name="findNumberRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="number" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="findNumberResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="result" type="tns:result"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="result">
+        <xs:sequence>
+            <xs:element name="code" type="tns:code"/>
+            <xs:element name="fileNames" type="tns:fileList"/>
+            <xs:element name="error" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="code">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="00.Result.OK"/>
+            <xs:enumeration value="01.Result.NotFound"/>
+            <xs:enumeration value="02.Result.Error"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="fileList">
+        <xs:list itemType="xs:string"/>
+    </xs:simpleType>
+</xs:schema>
